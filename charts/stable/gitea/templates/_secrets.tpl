@@ -100,6 +100,12 @@ stringData:
     {{- end }}
     {{- end }}
     {{- end }}
+    {{- if .Values.config.lfsSupport }}
+    LFS_START_SERVER = true
+    
+    [lfs]
+    PATH = /data/lfs
+    {{- end}}
 
     {{- range $catindex, $catvalue := .Values.customConfig }}
     {{- if not ( or ( eq $catvalue.name "server" ) ( eq $catvalue.name "server" ) ( eq $catvalue.name "security" ) ( eq $catvalue.name "repository" ) ( eq $catvalue.name "metrics" ) ( eq $catvalue.name "database" ) ( eq $catvalue.name "cache" ) ) }}
