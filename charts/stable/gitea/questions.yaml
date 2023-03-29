@@ -77,6 +77,12 @@ questions:
             required: true
             $ref:
               - "definitions/nodeIP"
+        - variable: lfsSupport
+          label: LFS
+          description: Enable LFS (Large File Storage)
+          schema:
+            type: boolean
+            default: false
   - variable: customConfig
     group: "App Configuration"
     label: "Custom Configuration parameters"
